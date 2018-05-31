@@ -1,9 +1,13 @@
 Pokedex
 ===
 
-Build a searchable, sortable pokemon viewer. The lab includes the pokemon data you can use.
+## Code Wars
+
+Complete [today's Kata](https://www.codewars.com/kata/insert-dashes) 
 
 ## App
+
+Build a searchable, sortable pokemon viewer. The lab includes the pokemon data you can use.
 
 Basic structure is like:
 
