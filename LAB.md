@@ -12,15 +12,15 @@ Build a searchable, sortable pokemon viewer. The lab includes the pokemon data y
 Basic structure is like:
 
 ```sh
-+-------------------+
-|  Filter and Sort  |
-+-------------------+
-|      Results      |
++-------------------------+
+|  Filter and Sort        |
++-------------------------+
+|      Results            |
 |◼️◻️◻️◼️◻️◻️◻️◻️◼️◻️◻️ |
 |◻️◻️◼️◻️◻️◼️◻️◻️◼️◻️◻️ |
-|◻️◻️◼️◻️◻️           |
-|                   |
-+-------------------+
+|◻️◻️◼️◻️◻️              |
+|                         |
++-------------------------+
 ```
 
 ## Components
