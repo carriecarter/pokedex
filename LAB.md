@@ -51,7 +51,7 @@ Container for Filter and Sort
 
 Offers controls for filtering. At a minimum allow:
 
-* Filtering based on type (notice there are two possible matches for each pokemon)
+* Filtering based on type (notice there are two possible matches for each pokemon). Use the source data to derive list of types. Check out `Set` for deduplication. (HINT: getting values out of a Set: `[...set.values()]`)
 * Pick at least one quantified attribute (attack, defence, etc.) and allow user to enter a minimum value. Make sure your input only allows whole, positive integer values.
 
 ##### Sort
