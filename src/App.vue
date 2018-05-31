@@ -3,10 +3,6 @@
     <h1>Pokedex</h1>
     <Header/>
     <Results/>
-    <Filter/>
-    <Sort/>
-    <Tile/>
-    
   </div>
 </template>
 

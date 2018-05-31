@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Filter</h1>
+    <h1>SearchFilter</h1>
     
   </div>
 </template>
@@ -10,10 +10,10 @@
 
 export default {
   data() {
-   return {
-     name: 'filter'
-   }
- }
+    return {
+      name: 'searchfilter'
+    }
+  }
 }
 
 </script>
