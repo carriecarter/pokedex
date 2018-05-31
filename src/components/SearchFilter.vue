@@ -18,18 +18,18 @@ import pokemonData from '../pokemon.js'
 
 export default {
   data() {
-    return { 
+    return {
       pokemonData,
       selected: ''
     };
   },
   methods: {
     dedupeTypes() {
-      const pokeTypes = new Set();
-      this.pokemonData.forEach(element => {
-        pokeTypes.add(element.type_1); 
+      const pokeTypeSet = new Set();
+      this.pokemonData.forEach(pokemon => {
+        pokeTypeSet.add(pokemon.type_1);
       });
-      return [...pokeTypes];
+      return [...pokeTypeSet];
     }
   }
 };
