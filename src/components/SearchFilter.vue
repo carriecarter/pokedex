@@ -2,10 +2,10 @@
   <div>
     <h1>Select your Pokemon's Qualities</h1>
     <select v-model="selected">
-      <option v-for="pokemon in pokemonData"
-        v-bind:key="pokemon.id" 
-        v-bind:value="pokemon.type_1">
-        {{ pokemon.type_1 }}
+      <option v-for="oneType in dedupeTypes()"
+        v-bind:key="oneType" 
+        v-bind:value="oneType">
+        {{ oneType }}
       </option>
     </select>
     <span>Selected: {{ selected }}</span>
@@ -23,6 +23,15 @@ export default {
       selected: ''
     };
   },
+  methods: {
+    dedupeTypes() {
+      const pokeTypes = new Set();
+      this.pokemonData.forEach(element => {
+        pokeTypes.add(element.type_1); 
+      });
+      return [...pokeTypes];
+    }
+  }
 };
 
 </script>
