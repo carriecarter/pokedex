@@ -10,11 +10,11 @@
 
 export default {
   data() {
-   return {
-     name: 'sort'
-   }
- }
-}
+    return {
+      name: 'sort'
+    }
+  }
+};
 
 </script>
 

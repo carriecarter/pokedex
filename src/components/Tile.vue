@@ -10,15 +10,14 @@
 
 export default {
   data() {
-   return {
-     name: 'tile'
-   }
- }
-}
+    return {
+      name: 'tile'
+    }
+  }
+};
 
 </script>
 
 <style>
-
 
 </style>
