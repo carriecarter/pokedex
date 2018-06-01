@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <h1>Pokedex</h1>
-    <Header :filterPreferences="filterPreferences" :dedupedTypes="dedupedTypes"/>  
-    <Results/>
+    <Header :filterPreferences="filterPreferences" :dedupedTypes="dedupedTypes" :sortPreferences="sortPreferences"/>  
+    <Results :filteredPokemon="filteredPokemon"/>
       
   </div>
 </template>
@@ -19,6 +19,10 @@ export default {
         filterPreferences: {
           minSpeed: 0,
           selectedType: ''
+        },
+        sortPreferences: {
+          options: ['name','speed', 'type'],
+          selectedSort: ''
         }
     };
   },
@@ -27,10 +31,6 @@ export default {
   components: {
     Header,
     Results,
-  },
-
-  methods: {
- 
   },
 
   computed: {
@@ -42,10 +42,14 @@ export default {
       });
       return [...pokeTypeSet];
     },
+    // sortedPokemon: function() {
+    //   this.filteredPokemon.sort((a, b) => b.pokemon - a.pokemon);
+    //   return filteredPokemon;
+    // },
     filteredPokemon: function() {
-      return pokemonData.filter(pokemon => {
-        return (selectedType === '' || selectedType === pokemon.type_1 || selectedType === pokemon.type_2)
-          && (filterPreferences.minSpeed < 0 || filterPreferences.minSpeed < pokemon.speed);
+      return this.pokemonData.filter(pokemon => {
+        return (this.selectedType === '' || this.selectedType === pokemon.type_1 || this.selectedType === pokemon.type_2)
+          && (this.filterPreferences.minSpeed < 0 || this.filterPreferences.minSpeed < this.pokemon.speed);
       });
     }
   }

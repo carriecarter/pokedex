@@ -2,7 +2,7 @@
   <div>
     <h1>Header</h1>
     <SearchFilter :filterPreferences="filterPreferences" :dedupedTypes="dedupedTypes"/> 
-    <Sort/>
+    <Sort :sortPreferences="sortPreferences"/>
   </div>
 </template>
 
@@ -12,7 +12,7 @@ import Sort from './Sort.vue'
 
 export default {
 
-  props: ['filterPreferences', 'dedupedTypes'],
+  props: ['filterPreferences', 'dedupedTypes', 'sortPreferences'],
 
   components: {
     SearchFilter,
