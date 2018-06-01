@@ -31,6 +31,6 @@ export default {
 
 img {
   max-width: 100px;
-  float: right;
+  /* float: right; */
 }
 </style>
