@@ -17,8 +17,8 @@ export default {
     return {
         pokemonData,
         filterPreferences: {
-         minSpeed: 0,
-         selectedType: ''
+          minSpeed: 0,
+          selectedType: ''
         }
     };
   },
@@ -41,6 +41,12 @@ export default {
         pokeTypeSet.add(pokemon.type_2);
       });
       return [...pokeTypeSet];
+    },
+    filteredPokemon: function() {
+      return pokemonData.filter(pokemon => {
+        return (selectedType === '' || selectedType === pokemon.type_1 || selectedType === pokemon.type_2)
+          && (filterPreferences.minSpeed < 0 || filterPreferences.minSpeed < pokemon.speed);
+      });
     }
   }
 }
