@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <h1>Pokedex</h1>
-    <Header/>
+    <Header :filteredPokemon="filteredPokemon"/>
     <Results/>
+      
   </div>
 </template>
 
@@ -13,9 +14,11 @@ import Results from './components/Results.vue'
 export default {
   data() {
     return {
-
+      filteredPokemon: []
     };
   },
+  // props: ['filteredPokemon'],
+
   components: {
     Header,
     Results

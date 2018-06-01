@@ -28,10 +28,7 @@ export default {
     };
   },
 
-  // props: {
-  //   selectedType: String,
-  //   minSpeed: Number
-  // },
+  props: ['filteredPokemon'],
 
   methods: {
 
@@ -45,26 +42,26 @@ export default {
     },
 
     filterPokemonData() {
-      let filteredPokemon = [];
+      
       this.pokemonData.forEach(pokemon => {
         // if both filters apply
         if(this.selectedType && this.minSpeed) {
           if( (pokemon.type_1 === this.selectedType || pokemon.type_2 === this.selectedType) && pokemon.speed >= this.minSpeed) {
-            filteredPokemon.push(pokemon);
+            this.filteredPokemon.push(pokemon);
           }
         } else if (this.selectedType) {
           if(pokemon.type_1 === this.selectedType || pokemon.type_2 === this.selectedType) {
-            filteredPokemon.push(pokemon);
+            this.filteredPokemon.push(pokemon);
           }
         } else if (this.minSpeed) {
           if(this.minSpeed <= pokemon.speed) {
-            filteredPokemon.push(pokemon);
+            this.filteredPokemon.push(pokemon);
           }
         }
       });
-      console.log (filteredPokemon)
-      if(filteredPokemon) {
-        return filteredPokemon;
+      console.log (this.filteredPokemon)
+      if(this.filteredPokemon) {
+        return this.filteredPokemon;
       } else {
         return this.pokemonData;
       }
