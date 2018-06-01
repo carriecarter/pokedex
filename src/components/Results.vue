@@ -1,7 +1,11 @@
 <template>
   <div>
-    <h1>Results</h1>
-    <Tile/>    
+    <h1>Your Pokemon Selections Are:</h1>
+    <Tile 
+      v-for="pokemon in filteredPokemon"
+      v-bind:key="pokemon.id"
+      v-bind:pokemon="pokemon"
+    /> 
   </div>
 </template>
 
@@ -16,7 +20,8 @@ export default {
   },
   components: {
     Tile
-  }
+  },
+  props: ['filteredPokemon']
 };
 
 </script>
