@@ -1,8 +1,7 @@
 <template>
   <div>
     <h1>Header</h1>
-    <!-- <SearchFilter :dedupedTypes="dedupedTypes" :minSpeed="minSpeed" :selectedType="selectedType"/> -->
-    <SearchFilter v-bind:minSpeed="minSpeed"/> 
+    <SearchFilter :filterPreferences="filterPreferences"/> 
     <Sort/>
   </div>
 </template>
@@ -13,7 +12,7 @@ import Sort from './Sort.vue'
 
 export default {
 
-  props: ['minSpeed', 'dedupedTypes','selectedType'],
+  props: ['filterPreferences', 'dedupedTypes'],
 
   components: {
     SearchFilter,

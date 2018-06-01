@@ -1,17 +1,14 @@
 <template>
   <div id="app">
     <h1>Pokedex</h1>
-    <!-- <Header :dedupedTypes="dedupedTypes" :minSpeed="minSpeed" :selectedType="selectedType"/> -->
-    <!-- <Header v-bind:minSpeed="minSpeed"/> -->
-    <SearchFilter v-bind:minSpeed="minSpeed"/>
+    <Header :filterPreferences="filterPreferences"/>  
     <Results/>
       
   </div>
 </template>
 
 <script>
-// import Header from './components/Header.vue'
-import SearchFilter from './components/SearchFilter.vue'
+import Header from './components/Header.vue'
 import Results from './components/Results.vue'
 import pokemonData from './pokemon.js'
 
@@ -20,18 +17,17 @@ export default {
     return {
         pokemonData,
         dedupedTypes: [],
-        selectedType: '',
-        minSpeed: {
-          value: 0
+        filterPreferences: {
+         minSpeed: 0,
+         selectedType: ''
         }
     };
   },
 
 
   components: {
-    // Header,
+    Header,
     Results,
-    SearchFilter
   },
 
   methods: {
@@ -53,7 +49,7 @@ export default {
     //       if( (pokemon.type_1 === this.selectedType || pokemon.type_2 === this.selectedType) && pokemon.speed >= this.minSpeed) {
     //         this.filteredPokemon.push(pokemon);
     //       }
-    //     } else if (this.selectedType) {
+    //     } else if (this.) {
     //       if(pokemon.type_1 === this.selectedType || pokemon.type_2 === this.selectedType) {
     //         this.filteredPokemon.push(pokemon);
     //       }
