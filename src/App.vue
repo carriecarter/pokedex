@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>Pokedex</h1>
-    <Header :filterPreferences="filterPreferences"/>  
+    <Header :filterPreferences="filterPreferences" :dedupedTypes="dedupedTypes"/>  
     <Results/>
       
   </div>
@@ -16,7 +16,6 @@ export default {
   data() {
     return {
         pokemonData,
-        dedupedTypes: [],
         filterPreferences: {
          minSpeed: 0,
          selectedType: ''
@@ -31,15 +30,21 @@ export default {
   },
 
   methods: {
+ 
+  },
 
-    // dedupeTypes() {
-    //   const pokeTypeSet = new Set();
-    //   this.pokemonData.forEach(pokemon => {
-    //     pokeTypeSet.add(pokemon.type_1);
-    //     pokeTypeSet.add(pokemon.type_2);
-    //   });
-    //   return [...pokeTypeSet];
-    // },
+  computed: {
+    dedupedTypes: function() {
+      const pokeTypeSet = new Set();
+      this.pokemonData.forEach(pokemon => {
+        pokeTypeSet.add(pokemon.type_1);
+        pokeTypeSet.add(pokemon.type_2);
+      });
+      return [...pokeTypeSet];
+    }
+  }
+}
+
 
     // filterPokemonData() {
       
@@ -68,10 +73,6 @@ export default {
       
     // }
 
-
-
-  }
-};
 
 
 </script>

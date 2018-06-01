@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Header</h1>
-    <SearchFilter :filterPreferences="filterPreferences"/> 
+    <SearchFilter :filterPreferences="filterPreferences" :dedupedTypes="dedupedTypes"/> 
     <Sort/>
   </div>
 </template>
