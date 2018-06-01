@@ -1,12 +1,8 @@
 <template>
   <div>
     <h1>Header</h1>
-    <SearchFilter :filteredPokemon="filteredPokemon"/>
-    <ul>
-      <li v-for="pokemon in filteredPokemon"
-          v-bind:key="pokemon.id">{{ pokemon.pokemon }}
-      </li>
-    </ul>
+    <!-- <SearchFilter :dedupedTypes="dedupedTypes" :minSpeed="minSpeed" :selectedType="selectedType"/> -->
+    <SearchFilter v-bind:minSpeed="minSpeed"/> 
     <Sort/>
   </div>
 </template>
@@ -16,12 +12,8 @@ import SearchFilter from './SearchFilter.vue'
 import Sort from './Sort.vue'
 
 export default {
- data() {
-   return {
-     name: 'header',
-     filteredPokemon: []
-   }
-  },
+
+  props: ['minSpeed', 'dedupedTypes','selectedType'],
 
   components: {
     SearchFilter,
