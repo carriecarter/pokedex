@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>Select your Pokemon's Qualities</h1>
+    <h2>Select your Pokemon's Qualities</h2>
+    <label>Type</label>
     <select v-model="filterPreferences.selectedType">
       <option v-for="oneType in dedupedTypes"
         v-bind:key="oneType" 
@@ -8,6 +9,7 @@
         {{ oneType }}
       </option>
     </select>
+    <label>Minimum Speed</label>
     <input v-model="filterPreferences.minSpeed" type="number">
   </div>
 </template>

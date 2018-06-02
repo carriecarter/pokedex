@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Your Pokemon Selections Are:</h1>
+    <hr>
     <Tile 
       v-for="pokemon in filteredPokemon"
       v-bind:key="pokemon.id"

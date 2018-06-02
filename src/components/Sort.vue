@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>Sort By: </h1>
+   
+    <label>Sort By:</label>
     <select v-model="sortPreferences.selectedSort">
       <option v-for="oneOption in sortPreferences.options"
         v-bind:key="oneOption" 
