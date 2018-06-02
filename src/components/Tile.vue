@@ -2,6 +2,7 @@
   <div class="tile" :class="pokemon.type_1">
     <h3>{{ pokemon.pokemon }}</h3>
     <p>{{ pokemon.type_1 }}</p>
+    <p>{{ pokemon.speed }}</p>
     <img :src="pokemon.url_image">
     
  
@@ -31,6 +32,6 @@ export default {
 
 img {
   max-width: 100px;
-  float: right;
+  /* float: right; */
 }
 </style>

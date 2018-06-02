@@ -2,7 +2,7 @@
   <div id="app">
     <h1>Pokedex</h1>
     <Header :filterPreferences="filterPreferences" :dedupedTypes="dedupedTypes" :sortPreferences="sortPreferences"/>  
-    <Results :filteredPokemon="filteredPokemon"/>
+    <Results :filteredPokemon="sortedPokemon"/>
       
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
         pokemonData,
         filterPreferences: {
           minSpeed: 0,
-          selectedType: ''
+          selectedType: null
         },
         sortPreferences: {
           options: ['name','speed', 'type'],
@@ -42,46 +42,21 @@ export default {
       });
       return [...pokeTypeSet];
     },
-    // sortedPokemon: function() {
-    //   this.filteredPokemon.sort((a, b) => b.pokemon - a.pokemon);
-    //   return filteredPokemon;
-    // },
+
     filteredPokemon: function() {
-      return this.pokemonData.filter(pokemon => {
-        return (this.selectedType === '' || this.selectedType === pokemon.type_1 || this.selectedType === pokemon.type_2)
-          && (this.filterPreferences.minSpeed < 0 || this.filterPreferences.minSpeed < this.pokemon.speed);
-      });
+      let type = this.filterPreferences.selectedType;
+      let minSpeed = this.filterPreferences.minSpeed;
+      var filteredData = this.pokemonData.filter (pokemon => 
+      (type === null || type === pokemon.type_1 || type === pokemon.type_2)
+      && (minSpeed === 0 || minSpeed < pokemon.speed));
+      return filteredData;
+    },
+
+    sortedPokemon: function() {
+      return this.filteredPokemon.slice().sort((a, b) => b.speed - a.speed);
     }
   }
 }
-
-
-    // filterPokemonData() {
-      
-    //   this.pokemonData.forEach(pokemon => {
-    //     // if both filters apply
-    //     if(this.selectedType && this.minSpeed) {
-    //       if( (pokemon.type_1 === this.selectedType || pokemon.type_2 === this.selectedType) && pokemon.speed >= this.minSpeed) {
-    //         this.filteredPokemon.push(pokemon);
-    //       }
-    //     } else if (this.) {
-    //       if(pokemon.type_1 === this.selectedType || pokemon.type_2 === this.selectedType) {
-    //         this.filteredPokemon.push(pokemon);
-    //       }
-    //     } else if (this.minSpeed) {
-    //       if(this.minSpeed <= pokemon.speed) {
-    //         this.filteredPokemon.push(pokemon);
-    //       }
-    //     }
-    //   });
-    //   console.log (this.filteredPokemon)
-    //   if(this.filteredPokemon) {
-    //     return this.filteredPokemon;
-    //   } else {
-    //     return this.pokemonData;
-    //   }
-      
-    // }
 
 
 
