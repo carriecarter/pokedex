@@ -4,10 +4,16 @@
       <fieldset>
         <legend>Sort by</legend>
         <select v-model="sortPreferences.selectedSort">
-          <option v-for="oneOption in sortPreferences.options"
+          <option v-for="oneOption in sortPreferences.sortOptions"
             v-bind:key="oneOption" 
-            v-bind:value="oneOption"
-            selected="name">
+            v-bind:value="oneOption">
+            {{ oneOption }}
+          </option>
+        </select>
+        <select v-model="sortPreferences.selectedDirection">
+          <option v-for="oneOption in sortPreferences.directionOptions"
+            v-bind:key="oneOption" 
+            v-bind:value="oneOption">
             {{ oneOption }}
           </option>
         </select>

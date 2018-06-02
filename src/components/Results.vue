@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h3>{{listToDisplay.length}} pokemon met your criteria</h3>
     <Tile 
       v-for="pokemon in listToDisplay"
       v-bind:key="pokemon.id"

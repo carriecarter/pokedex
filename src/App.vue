@@ -23,10 +23,10 @@ export default {
         selectedType: 'all'
       },
       sortPreferences: {
-        options: ['name','speed', 'primary type', 'attack', 'defense'],
+        sortOptions: ['name','speed', 'primary type', 'attack', 'defense'],
         selectedSort: 'name',
-        // directionOptions: ['ascending', 'descending'],
-        // selectedDirection: 'ascending'
+        directionOptions: ['ascending', 'descending'],
+        selectedDirection: 'ascending'
       }
     };
   },
@@ -65,21 +65,28 @@ export default {
 
     sortedPokemon: function() {
       const listToSort = this.filteredPokemon.slice();
+      const sortDirection = this.sortPreferences.selectedDirection;
       switch(this.sortPreferences.selectedSort) {
         case 'name':
           return this.sortOnStringProperty(listToSort, 'pokemon');
           break;
         case 'speed':
-          return listToSort.sort((a, b) => a.speed - b.speed);
+          return (sortDirection ==='ascending' ? 
+          listToSort.sort((a, b) => a.speed - b.speed) : 
+          listToSort.sort((a, b) => b.speed - a.speed) );
           break;
         case 'primary type':
           return this.sortOnStringProperty(listToSort, 'type_1');
           break;
         case 'attack':
-          return listToSort.sort((a, b) => a.attack - b.attack);
+          return (sortDirection ==='ascending' ? 
+          listToSort.sort((a, b) => a.attack - b.attack) : 
+          listToSort.sort((a, b) => b.attack - a.attack) );
           break;
         case 'defense':
-          return listToSort.sort((a, b) => a.defense - b.defense);
+          return (sortDirection ==='ascending' ? 
+          listToSort.sort((a, b) => a.defense - b.defense) : 
+          listToSort.sort((a, b) => b.defense - a.defense) );
           break;
         default:
           return this.sortOnStringProperty(listToSort, 'pokemon');
@@ -91,14 +98,15 @@ export default {
   methods: {
 
     sortOnStringProperty: function(objectArray, property) {
+      const sortDirection = this.sortPreferences.selectedDirection;
       objectArray.sort(function(a, b) {
         var stringA = a[property].toUpperCase();
         var stringB = b[property].toUpperCase();
         if (stringA < stringB) {
-          return -1;
+          return (sortDirection === 'ascending' ? -1 : 1);
         }
         if (stringA > stringB) {
-          return 1;
+          return (sortDirection === 'ascending' ? 1 : -1);
         }
           return 0;
       });
