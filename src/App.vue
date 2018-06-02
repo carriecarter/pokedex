@@ -34,18 +34,19 @@ export default {
   },
 
   methods: {
-    sortByString: function(items) {
+    sortByString: function(items, property) {
       items.sort(function(a, b) {
-        var nameA = a.name.toUpperCase(); // ignore upper and lowercase
-        var nameB = b.name.toUpperCase(); // ignore upper and lowercase
-        if (nameA < nameB) {
+        var stringA = a[property].toUpperCase();
+        var stringB = b[property].toUpperCase();
+        if (stringA < stringB) {
           return -1;
         }
-        if (nameA > nameB) {
+        if (stringA > stringB) {
           return 1;
         }
           return 0;
       });
+      return items;
     }
   },
 
@@ -72,13 +73,13 @@ export default {
     sortedPokemon: function() {
       switch(this.sortPreferences.selectedSort) {
         case 'name':
-          return sortByString(this.filteredPokemon.slice());
+          return this.sortByString(this.filteredPokemon.slice(), 'pokemon');
           break;
         case 'speed':
           return this.filteredPokemon.slice().sort((a, b) => b.speed - a.speed);
           break;
         case 'type':
-          
+          return this.sortByString(this.filteredPokemon.slice(), 'type_1');
           break;
         default:
           return this.filteredPokemon.slice().sort((a, b) => b.speed - a.speed);
