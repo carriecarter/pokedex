@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>Pokedex</h1>
+    <img src="./assets/Pokedex.png">
     <Header :filterPreferences="filterPreferences" :dedupedTypes="dedupedTypes" :sortPreferences="sortPreferences"/>  
     <Results :filteredPokemon="sortedPokemon"/>
       
@@ -33,6 +33,23 @@ export default {
     Results,
   },
 
+  methods: {
+    sortByString: function(items) {
+      items.sort(function(a, b) {
+        var nameA = a.name.toUpperCase(); // ignore upper and lowercase
+        var nameB = b.name.toUpperCase(); // ignore upper and lowercase
+        if (nameA < nameB) {
+          return -1;
+        }
+        if (nameA > nameB) {
+          return 1;
+        }
+          return 0;
+      });
+    }
+  },
+
+
   computed: {
     dedupedTypes: function() {
       const pokeTypeSet = new Set();
@@ -53,7 +70,20 @@ export default {
     },
 
     sortedPokemon: function() {
-      return this.filteredPokemon.slice().sort((a, b) => b.speed - a.speed);
+      switch(this.sortPreferences.selectedSort) {
+        case 'name':
+          return sortByString(this.filteredPokemon.slice());
+          break;
+        case 'speed':
+          return this.filteredPokemon.slice().sort((a, b) => b.speed - a.speed);
+          break;
+        case 'type':
+          
+          break;
+        default:
+          return this.filteredPokemon.slice().sort((a, b) => b.speed - a.speed);
+
+      }
     }
   }
 }
@@ -63,6 +93,8 @@ export default {
 </script>
 
 <style>
-
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 </style>
