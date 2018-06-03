@@ -1,20 +1,21 @@
 # Pokedex
 
-## By Carrie Carter and Karen Painter
+By Carrie Carter and Karen Painter
 
 ## Instructions to run
 Download all files and launch using Vue
 
-## File Structure
+# File Structure
 
-App.vue (imports data file and filters and sorts it based on options from user)
- |
- +-- Header.vue (contains filter and view objects -- doesn't do much)
- |    |
- |    +-- Filter.vue (collects filter options from user)
- |    |
- |    +-- Sort.vue (collect sort options from user)
- |
- +-- Results.vue (displays result collection)
-      |
-      + Tile.vue (displays tile for each result)
+## App.vue
+imports data file and filters and sorts it based on options from user
+### Header.vue 
+contains filter and view objects -- doesn't do much
+#### Filter.vue 
+collects filter options from user
+#### Sort.vue
+collect sort options from user
+### Results.vue 
+displays result collection
+#### Tile.vue
+displays tile for each result
