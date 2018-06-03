@@ -2,6 +2,8 @@
 
 By Carrie Carter and Karen Painter
 
+Imports and displays a file of Pokemon data and provides ways to filter and sort the pokemon.
+
 ## Instructions to run
 Download all files and launch using Vue
 
