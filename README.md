@@ -5,7 +5,7 @@ By Carrie Carter and Karen Painter
 ## Instructions to run
 Download all files and launch using Vue
 
-# File Structure
+## File Structure
 
 ## App.vue
 imports data file and filters and sorts it based on options from user
