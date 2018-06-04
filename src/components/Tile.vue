@@ -56,6 +56,11 @@ p {
   padding: 2px 16px;
 }
 
+.tile h3 {
+  font-variant-caps: all-small-caps;
+  font-size: 1.5em;
+}
+
 .bug {
   background-color: #DAD690; 
 }

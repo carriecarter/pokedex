@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>{{listToDisplay.length}} pokemon met your criteria</h3>
+    <h3 id="pokemon-matches">{{listToDisplay.length}} pokemon met your criteria</h3>
     <Tile 
       v-for="pokemon in listToDisplay"
       v-bind:key="pokemon.id"
@@ -23,7 +23,7 @@ export default {
 
 <style>
 
-h3 {
+#pokemon-matches {
   font-family: Arial, Helvetica, sans-serif;
   color: #F3DB6D;
   text-align: center;
