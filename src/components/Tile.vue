@@ -29,7 +29,6 @@ export default {
 ul {
   list-style-type: none;
   display: flex;
-  flex-direction: column;
 }
 p {
   line-height: 10px;
@@ -42,16 +41,74 @@ p {
   background-color: lightgrey;
   width: 250px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  overflow-y:hidden;
 }
 .tile:hover {
   box-shadow: 0 80px 400px 0 rgba(0,0,0,0.2);
 }
 .container {
   padding: 2px 16px;
+}
+
+.bug {
+  background-color: #DAD690; 
+}
+
+.dark {
+  background-color: #CA90DA; 
+}
+
+.dragon {
+  background-color: #EECDE6
+; 
+}
+.electric {
+  background-color: #E2ABE3; 
+}
+.fairy {
+  background-color: #CDEECE; 
+}
+.fighting {
+  background-color: #B6E7C0; 
+}
+.fire {
+  background-color: #DD98B7; 
+}
+.flying {
+  background-color: #FAF0F9; 
+}
+.ghost {
+  background-color: #E1D5F1; 
+}
+.grass {
+  background-color: #B8C85B; 
+}
+.ground {
+  background-color: #CDC56A; 
+}
+.ice {
+  background-color: #CDDEEE;
+ 
+}
+.normal {
+  background-color: #90DAB5; 
+}
+.poison {
+  background-color:#D788B0; 
+}
+.psychic {
+  background-color: #C9EDDD; 
+}
+.rock {
+  background-color: #BED0E9; 
+}
+.steel {
+  background-color: #A7B4E2; 
+}
+.water {
+  background-color: #8890D7; 
 }
 
 

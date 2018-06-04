@@ -143,20 +143,19 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: #fff;
+  background: rgb(247, 247, 247);
 }
+
 main {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
+  width: 90%;
 }
 
 .header {
   display: flex;
   width: 90%;
 }
+
 .results {
   width: 90%;
 }
