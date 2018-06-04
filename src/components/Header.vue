@@ -1,6 +1,6 @@
 <template>
   <div>
-    <SearchFilter :filterPreferences="filterPreferences" :dedupedTypes="dedupedTypes"/> 
+    <SearchFilter :filterPreferences="filterPreferences" :typeOptions="typeOptions"/> 
     <Sort :sortPreferences="sortPreferences"/>
   </div>
 </template>
@@ -11,12 +11,13 @@ import Sort from './Sort.vue'
 
 export default {
 
-  props: ['filterPreferences', 'dedupedTypes', 'sortPreferences'],
+  props: ['filterPreferences', 'typeOptions', 'sortPreferences'],
 
   components: {
     SearchFilter,
     Sort
   }
+
 };
 
 </script>
