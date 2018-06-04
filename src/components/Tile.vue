@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="tile-group">
     <ul>
       <li>
         <div class="tile" :class="pokemon.type_1">
@@ -25,6 +25,10 @@ export default {
 </script>
 
 <style>
+
+.tile-group {
+  display: inline-block;
+}
 
 ul {
   list-style-type: none;

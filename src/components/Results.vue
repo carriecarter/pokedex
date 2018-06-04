@@ -20,3 +20,13 @@ export default {
 };
 
 </script>
+
+<style>
+
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #F3DB6D;
+  text-align: center;
+}
+
+</style>
