@@ -137,8 +137,27 @@ export default {
 </script>
 
 <style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #fff;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
 }
 
+.header {
+  display: flex;
+  width: 90%;
+}
+.results {
+  width: 90%;
+}
 </style>

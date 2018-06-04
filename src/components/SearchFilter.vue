@@ -27,5 +27,25 @@ export default {
 
 <style>
 
+form {
+  margin-top: 40px;
+}
+
+legend {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #0039EB;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+  margin: 8px;
+  max-width: 40px
+}
+
 
 </style>
